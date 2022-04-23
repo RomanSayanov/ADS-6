@@ -10,10 +10,10 @@ class TPQueue {
  public:
   void push(T value) {
       int c = b;
-      while ((--i >= a) && (value.prior > arr[i % size].prior)) {
-          arr[(i + 1) % size] = arr[i % size];
+      while ((--c >= a) && (value.prior > arr[c % size].prior)) {
+          arr[(c + 1) % size] = arr[c % size];
       }
-      arr[(i+1) % size] = value;
+      arr[(c+1) % size] = value;
       b++;
   }
   T pop() {
